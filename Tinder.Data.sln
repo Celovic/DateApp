@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tinder.Data", "Tinder.Data\Tinder.Data.csproj", "{DC853C40-0422-4611-9943-63C52DCF740D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tinder.Service", "Tinder.Service\Tinder.Service.csproj", "{73C395B8-3A9B-4127-BAD6-41C47521DB63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tinder.Repository", "Tinder.Repository\Tinder.Repository.csproj", "{896506C1-377F-4093-80BF-E29ADECB5268}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TinderMVC", "TinderMVC\TinderMVC.csproj", "{EA21CF8C-AB87-4325-AFF0-CAA2C1F36675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinderAPI", "TinderAPI\TinderAPI.csproj", "{E9A4BDD4-769C-4E87-B1BC-B14E2BF8E90A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC853C40-0422-4611-9943-63C52DCF740D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC853C40-0422-4611-9943-63C52DCF740D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC853C40-0422-4611-9943-63C52DCF740D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC853C40-0422-4611-9943-63C52DCF740D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C395B8-3A9B-4127-BAD6-41C47521DB63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C395B8-3A9B-4127-BAD6-41C47521DB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C395B8-3A9B-4127-BAD6-41C47521DB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C395B8-3A9B-4127-BAD6-41C47521DB63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{896506C1-377F-4093-80BF-E29ADECB5268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896506C1-377F-4093-80BF-E29ADECB5268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896506C1-377F-4093-80BF-E29ADECB5268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896506C1-377F-4093-80BF-E29ADECB5268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA21CF8C-AB87-4325-AFF0-CAA2C1F36675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA21CF8C-AB87-4325-AFF0-CAA2C1F36675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA21CF8C-AB87-4325-AFF0-CAA2C1F36675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA21CF8C-AB87-4325-AFF0-CAA2C1F36675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A4BDD4-769C-4E87-B1BC-B14E2BF8E90A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A4BDD4-769C-4E87-B1BC-B14E2BF8E90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A4BDD4-769C-4E87-B1BC-B14E2BF8E90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A4BDD4-769C-4E87-B1BC-B14E2BF8E90A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8773F5D-BCD2-4B7A-ABC3-A99E87A1852E}
+	EndGlobalSection
+EndGlobal

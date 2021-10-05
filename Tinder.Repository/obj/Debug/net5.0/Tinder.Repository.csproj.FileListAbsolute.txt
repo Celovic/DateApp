@@ -1,0 +1,15 @@
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\bin\Debug\net5.0\Tinder.Repository.deps.json
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\bin\Debug\net5.0\Tinder.Repository.dll
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\bin\Debug\net5.0\ref\Tinder.Repository.dll
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\bin\Debug\net5.0\Tinder.Repository.pdb
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\bin\Debug\net5.0\Tinder.Data.dll
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\bin\Debug\net5.0\Tinder.Data.pdb
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\obj\Debug\net5.0\Tinder.Repository.csproj.AssemblyReference.cache
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\obj\Debug\net5.0\Tinder.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\obj\Debug\net5.0\Tinder.Repository.AssemblyInfoInputs.cache
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\obj\Debug\net5.0\Tinder.Repository.AssemblyInfo.cs
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\obj\Debug\net5.0\Tinder.Repository.csproj.CoreCompileInputs.cache
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\obj\Debug\net5.0\Tinder.Repository.csproj.CopyComplete
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\obj\Debug\net5.0\Tinder.Repository.dll
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\obj\Debug\net5.0\ref\Tinder.Repository.dll
+C:\Users\celal\source\repos\Tinder.Data\Tinder.Repository\obj\Debug\net5.0\Tinder.Repository.pdb

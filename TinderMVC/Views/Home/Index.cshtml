@@ -1,0 +1,34 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,TinderMvc
+@using X.PagedList;
+@using X.PagedList.Mvc.Core
+@model IPagedList<TinderMVC.Models.UserModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div style="margin-top:20%">
+        <a>
+            <h2>@item.UserName</h2>
+            <h2>@item.BirthDate</h2>
+            <h2>@item.Description</h2>
+            <h2></h2>
+        </a>
+        <!--<a class="btn btn-light" href="/Home/Chat">Send Message</a>-->
+        <a class="btn btn-success" asp-controller="Home" asp-action="Like" asp-route-Id="@item.UserId">Like to User</a>
+        <a class="btn btn-danger" asp-controller="Home" asp-action="UnLike" asp-route-Id="@item.UserId">UnLike to User</a>
+
+        <a class="btn btn-success" action="Matches" href="/Home/Matches">Lok At Matches</a>
+        <br />
+        <br />
+        <div style="margin-left:150px;">
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+        </div>
+        <br />
+        <br />
+    </div>
+    <!--<a href="/Home/LikeList">Users you like</a>-->
+}

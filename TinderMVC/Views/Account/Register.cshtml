@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <form action="~/Account/Register/" enctype="multipart/form-data" method="post">
+
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" name="FirstName" placeholder="First Name">
+            </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" name="LastName" placeholder="Last Name">
+            </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" name="UserName" placeholder="User Name">
+            </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                </div>
+                <input type="password" class="form-control" name="Password" placeholder="password">
+            </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="email" class="form-control" name="Email" placeholder="Email">
+
+            </div>
+
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="tel" class="form-control" name="PhoneNumber" placeholder="Phone">
+
+            </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="date" class="form-control" name="BirthDate" placeholder="Birth Date">
+            </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <textarea placeholder="Description" name="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn float-right login_btn" type="submit">Register</button>
+            </div>
+            <br />
+            <div class="form-group">
+                <a class="btn float-left btn-primary" href="/Account/Login">Do you have a Account</a>
+            </div>
+        </form>
+    </div>
+</div>
