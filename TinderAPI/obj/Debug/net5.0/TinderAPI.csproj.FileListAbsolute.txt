@@ -71,3 +71,6 @@ C:\Users\celal\source\repos\Tinder.Data\TinderAPI\obj\Debug\net5.0\TinderAPI.gen
 C:\Users\celal\source\repos\Tinder.Data\TinderAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\celal\source\repos\Tinder.Data\TinderAPI\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\celal\source\repos\Tinder.Data\TinderAPI\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\celal\source\repos\Tinder.Data\TinderAPI\bin\Debug\net5.0\JetBrains.Annotations.dll
+C:\Users\celal\source\repos\Tinder.Data\TinderAPI\bin\Debug\net5.0\X.PagedList.dll
+C:\Users\celal\source\repos\Tinder.Data\TinderAPI\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll

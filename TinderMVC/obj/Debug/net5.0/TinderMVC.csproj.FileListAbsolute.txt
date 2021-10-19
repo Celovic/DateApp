@@ -429,7 +429,6 @@ C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\TinderMVC.Raz
 C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\Razor\Views\Home\Matches.cshtml.g.cs
 C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\Razor\Views\_Layout.cshtml.g.cs
 C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\TinderMVC.RazorTargetAssemblyInfo.cache
 C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\TinderMVC.RazorTargetAssemblyInfo.cs
@@ -439,3 +438,4 @@ C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\TinderMVC.gen
 C:\Users\celal\source\repos\Tinder.Data\TinderMVC\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\celal\source\repos\Tinder.Data\TinderMVC\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\celal\source\repos\Tinder.Data\TinderMVC\bin\Debug\net5.0\Moq.dll
+C:\Users\celal\source\repos\Tinder.Data\TinderMVC\obj\Debug\net5.0\Razor\Views\Home\GetMatches.cshtml.g.cs

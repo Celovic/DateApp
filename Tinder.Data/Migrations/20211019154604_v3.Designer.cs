@@ -10,8 +10,8 @@ using Tinder.Data.Context;
 namespace Tinder.Data.Migrations
 {
     [DbContext(typeof(TinderDbContext))]
-    [Migration("20211001161637_vlast")]
-    partial class vlast
+    [Migration("20211019154604_v3")]
+    partial class v3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

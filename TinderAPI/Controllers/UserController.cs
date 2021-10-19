@@ -17,44 +17,39 @@ namespace TinderAPI.Controllers
     {
         private readonly IUserService _userService;
         private readonly IMatchesService _matchesService;
-        private readonly IUnitOfWorkPattern _unitOfWork;
-        public UserController(IUnitOfWorkPattern unitOfWork, IMatchesService matchesService, IUserService userService)
+        public UserController(IMatchesService matchesService, IUserService userService)
         {
-            _unitOfWork = unitOfWork;
             _matchesService = matchesService;
             _userService = userService;
         }
         [HttpGet]
-        public async Task<IEnumerable<User>> Get()
+        public async Task<IEnumerable<User>> GetUsers()
         {
             return await _userService.GetAll();
         }
-        [HttpGet("{id}")]
-        public async Task<User> Get(string id)
+        [HttpGet("GetUsersById/{id}")]
+        public async Task<User> GetUsersById(string id)
         {
-            return (await _userService.GetAll()).FirstOrDefault(x => x.Id == id);
+            return await _userService.GetById(id);
         }
         [HttpPost]
-        public async Task<User> Post([FromBody] User user)
+        public async Task<User> UserPost([FromBody] User user)
         {
             await _userService.Add(user);
-            _unitOfWork.Complete();
             return user;
         }
         [HttpPut]
-        public async Task<User> Put([FromBody] User user,string id)
+        public async ValueTask<User> UserPut([FromBody] User user, string userId)
         {
-            var editedUser =(await _userService.GetAll()).FirstOrDefault(x => x.Id == id);
-            _userService.Update(user);
-            _unitOfWork.Complete();
-            return user;
+            var editedUser = await _userService.GetById(userId);
+            await _userService.Update(editedUser);
+            return editedUser;
         }
-        [HttpDelete("{id}")]
-        public async Task Delete(string id)
+        [HttpDelete("{userId}")]
+        public async ValueTask DeleteUser(string userId)
         {
-            var deletedUser = (await _userService.GetAll()).FirstOrDefault(x => x.Id == id);
-            _userService.Remove(deletedUser);
-            _unitOfWork.Complete();
+            var deletedUser = await _userService.GetById(userId);
+            await _userService.Remove(deletedUser);
         }
     }
 }

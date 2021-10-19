@@ -45,12 +45,12 @@ namespace GirisKayit.Controllers
                         return View();
                     }
                 }
-                 _userService.Add(user);
+                await _userService.Add(user);
                 return RedirectToAction("Login", "Account");
             }
             return View(user);
         }
-       
+
         public IActionResult Login()
         {
             return View();

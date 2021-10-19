@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Tinder.Data.Migrations
 {
-    public partial class finish : Migration
+    public partial class v3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -164,17 +164,16 @@ namespace Tinder.Data.Migrations
                 {
                     MatchesId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PersonId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PersonId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     LikedPerson = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<bool>(type: "bit", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    Status = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TBLMatches", x => x.MatchesId);
                     table.ForeignKey(
-                        name: "FK_TBLMatches_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_TBLMatches_AspNetUsers_PersonId",
+                        column: x => x.PersonId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -220,9 +219,9 @@ namespace Tinder.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TBLMatches_UserId",
+                name: "IX_TBLMatches_PersonId",
                 table: "TBLMatches",
-                column: "UserId");
+                column: "PersonId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

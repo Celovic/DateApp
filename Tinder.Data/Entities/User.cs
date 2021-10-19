@@ -19,10 +19,6 @@ namespace Tinder.Data.Entities
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        /* [DisplayName("E mail")]
-         [Required(ErrorMessage = "{0} is not empty")]
-         [DataType(DataType.EmailAddress)]
-         public string Email { get; set; }*/
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required]
@@ -30,8 +26,7 @@ namespace Tinder.Data.Entities
         [Required]
         [DataType(DataType.Text)]
         public string Description { get; set; }
-        public string ImageUrl{ get; set; }
-        public ICollection<Matches> Matches { get; set; }
-
+        public string ImageUrl { get; set; }
+        public IEnumerable<Matches> Matches { get; set; }
     }
 }

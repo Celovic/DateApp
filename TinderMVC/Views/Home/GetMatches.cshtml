@@ -1,0 +1,21 @@
+﻿@model IList<Tinder.Data.Entities.User>
+    @{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+    }
+
+    @foreach (var item in Model)
+    {
+    <div style="margin-top:20%"></div>
+    <table>
+        <tr>
+            <td>Your Matched User Name</td>
+            <td>Send Message</td>
+        </tr>
+        <tr style="margin-top:15%;">
+            <td>@item.UserName</td>
+            <td><a class="btn btn-light" href="/Home/Chat/@item.Id">Send Message</a></td>
+        </tr>
+    </table>
+    }
+

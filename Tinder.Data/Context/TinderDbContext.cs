@@ -13,7 +13,7 @@ namespace Tinder.Data.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server = DESKTOP-154APPP; Database = TinderWeb; Integrated Security = true; Trusted_Connection = True;MultipleActiveResultSets=True");
+            optionsBuilder.UseSqlServer(@"Server = DESKTOP-154APPP; Database = TinderLastDb; Integrated Security = true; Trusted_Connection = True;MultipleActiveResultSets=True");
         }
         public DbSet<User> TBLUser { get; set; }
         public DbSet<Matches> TBLMatches { get; set; }

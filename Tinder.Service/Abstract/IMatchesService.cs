@@ -11,5 +11,8 @@ namespace Tinder.Service.Abstract
     {
         Task<IEnumerable<Matches>> GetTopMatches(int count);
         Task<IEnumerable<Matches>> GetMatchesWithUser();
+        ValueTask<Matches> LikeToUser(User user);
+        ValueTask<Matches> DisLikeToUser(User user);
+
     }
 }

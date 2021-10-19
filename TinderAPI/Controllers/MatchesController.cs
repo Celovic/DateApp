@@ -16,49 +16,44 @@ namespace TinderAPI.Controllers
     {
         private readonly IUserService _userService;
         private readonly IMatchesService _matchesService;
-        private readonly IUnitOfWorkPattern _unitOfWork;
-        public MatchesController(IUnitOfWorkPattern unitOfWork, IMatchesService matchesService, IUserService userService)
+        public MatchesController(IMatchesService matchesService, IUserService userService)
         {
-            _unitOfWork = unitOfWork;
             _matchesService = matchesService;
             _userService = userService;
         }
         [HttpGet]
-        public async Task<IEnumerable<Matches>> Get()
+        public async Task<IEnumerable<Matches>> GetMatches()
         {
             return await _matchesService.GetAll();
         }
-        [HttpGet("Get/{id}")]
-        public async Task<Matches> Get(int id)
+        [HttpGet("GetMatches/{id}")]
+        public async Task<Matches> GetMatches(int id)
         {
-            return (await _matchesService.GetAll()).FirstOrDefault(x => x.MatchesId == id);
+            return await _matchesService.GetByMatchesId(id);
         }
-        [HttpGet("Get/{userId}")]
-        public async Task<Matches> Get(string userId)
+        [HttpGet("GetMatchesFromUserId/{userId}")]
+        public async Task<Matches> GetMathesWithUser(string userId)
         {
-            return (await _matchesService.GetAll()).FirstOrDefault(x => x.PersonId == userId);
+            return await _matchesService.GetById(userId);
         }
-        [HttpPost]
+        [HttpPost(("MatchAdd/"))]
         public async Task<Matches> Post([FromBody] Matches matches)
         {
             await _matchesService.Add(matches);
-            _unitOfWork.Complete();
             return matches;
         }
-        [HttpPut]
-        public async Task<Matches> Put([FromBody] Matches matches, int id)
+        [HttpPut("MatchUpdate/")]
+        public async ValueTask<Matches> Put([FromBody] int matchesId)
         {
-            var editedMatches = (await _matchesService.GetAll()).FirstOrDefault(x => x.MatchesId == id);
-            _matchesService.Update(matches);
-            _unitOfWork.Complete();
-            return matches;
+            var editedMatches = await _matchesService.GetByMatchesId(matchesId);
+            await _matchesService.Update(editedMatches);
+            return editedMatches;
         }
-        [HttpDelete("{id}")]
-        public async Task Delete(int id)
+        [HttpDelete("MatchDelete/{matchesId}")]
+        public async ValueTask Delete(Matches matchesId)
         {
-            var deletedMatches = (await _matchesService.GetAll()).FirstOrDefault(x => x.MatchesId == id);
-            _matchesService.Remove(deletedMatches);
-            _unitOfWork.Complete();
+            var deletedMatch = await _matchesService.GetByMatchesId(matchesId.MatchesId);
+            await _matchesService.Remove(deletedMatch);
         }
     }
 }

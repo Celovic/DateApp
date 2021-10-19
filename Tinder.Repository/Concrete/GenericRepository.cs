@@ -11,13 +11,13 @@ namespace Tinder.Repository.Concrete
 {
     public class GenericRepository<TEntity, TContext> : IGenericRepository<TEntity> where TEntity : class, IEntity, new() where TContext : DbContext, new()
     {
-        public void Add(TEntity entity)
+        public async Task Add(TEntity entity)
         {
             using (var context = new TContext())
             {
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
-                context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
         public async Task<List<TEntity>> GetAll()
@@ -27,7 +27,7 @@ namespace Tinder.Repository.Concrete
                 return await context.Set<TEntity>().ToListAsync();
             }
         }
-        public async Task<List<TEntity>> GetAll(Expression<Func<TEntity, bool>> filter)
+        public async ValueTask<List<TEntity>> GetAll(Expression<Func<TEntity, bool>> filter)
         {
             using (var context = new TContext())
             {
@@ -48,7 +48,7 @@ namespace Tinder.Repository.Concrete
             }
         }
 
-        public async Task<TEntity> GetByUserId(int id)
+        public async Task<TEntity> GetByMatchesId(int id)
         {
             using (var context = new TContext())
             {
@@ -56,22 +56,29 @@ namespace Tinder.Repository.Concrete
             }
         }
 
-        public void Remove(TEntity entity)
+        public async Task Remove(TEntity entity)
         {
             using (var context = new TContext())
             {
                 var deletedEntity = context.Entry(entity);
                 deletedEntity.State = EntityState.Deleted;
-                context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
-        public void Update(TEntity entity)
+        public async Task Update(TEntity entity)
         {
             using (var context = new TContext())
             {
                 var updatedEntity = context.Entry(entity);
                 updatedEntity.State = EntityState.Modified;
-                context.SaveChanges();
+                await context.SaveChangesAsync();
+            }
+        }
+        public async Task<IEnumerable<TEntity>> Include(string table)
+        {
+            using (var context = new TContext())
+            {
+                return await context.Set<TEntity>().Include(table).ToListAsync();
             }
         }
     }

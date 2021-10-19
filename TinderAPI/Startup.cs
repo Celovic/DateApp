@@ -1,20 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Tinder.Data.Context;
 using Tinder.Data.Entities;
 using Tinder.Service.Abstract;
 using Tinder.Service.Concrete;
+using TinderAPI.Helper;
 
 namespace TinderAPI
 {
@@ -31,7 +26,12 @@ namespace TinderAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllersWithViews()
+                .AddJsonOptions(x =>
+                {
+                    x.JsonSerializerOptions.PropertyNamingPolicy = null;
+                    x.JsonSerializerOptions.Converters.Add(new DateTimeConverterUsingDateTimeParse());
+                });
             services.AddDbContext<TinderDbContext>();
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<TinderDbContext>();
             services.AddScoped<IUserService, UserService>();
@@ -40,6 +40,14 @@ namespace TinderAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TinderAPI", Version = "v1" });
+            });
+            services.AddCors(options =>
+            {
+                var frontendURL = Configuration.GetValue<string>("frontend_url");
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader();
+                });
             });
         }
 
@@ -54,6 +62,8 @@ namespace TinderAPI
             }
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 

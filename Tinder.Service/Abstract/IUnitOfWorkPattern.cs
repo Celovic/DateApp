@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tinder.Service.Abstract
 {
-    public interface IUnitOfWorkPattern: IDisposable
+    public interface IUnitOfWorkPattern : IDisposable
     {
         //IUserService UserService { get; }
         //IMatchesService MatchesService { get; }

@@ -3176,7 +3176,8 @@
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Newtonsoft.Json": "13.0.1",
           "Tinder.Data": "1.0.0",
-          "Tinder.Repository": "1.0.0"
+          "Tinder.Repository": "1.0.0",
+          "X.PagedList.Mvc.Core": "8.1.0"
         },
         "compile": {
           "bin/placeholder/Tinder.Service.dll": {}

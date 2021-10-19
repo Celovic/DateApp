@@ -2,7 +2,7 @@
 @addTagHelper *,TinderMvc
 @using X.PagedList;
 @using X.PagedList.Mvc.Core
-@model IPagedList<TinderMVC.Models.UserModel>
+@model IPagedList<Tinder.Data.Entities.User>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_Layout.cshtml";
@@ -18,10 +18,10 @@
             <h2></h2>
         </a>
         <!--<a class="btn btn-light" href="/Home/Chat">Send Message</a>-->
-        <a class="btn btn-success" asp-controller="Home" asp-action="Like" asp-route-Id="@item.UserId">Like to User</a>
-        <a class="btn btn-danger" asp-controller="Home" asp-action="UnLike" asp-route-Id="@item.UserId">UnLike to User</a>
+        <a class="btn btn-success" asp-controller="Home" asp-action="Like" asp-route-Id="@item.Id">Like to User</a>
+        <a class="btn btn-danger" asp-controller="Home" asp-action="UnLike" asp-route-Id="@item.Id">UnLike to User</a>
 
-        <a class="btn btn-success" action="Matches" href="/Home/Matches">Lok At Matches</a>
+        <a class="btn btn-success" action="Matches" href="/Home/GetMatches">Lok At Matches</a>
         <br />
         <br />
         <div style="margin-left:150px;">
